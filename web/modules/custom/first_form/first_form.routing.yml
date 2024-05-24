@@ -1,0 +1,23 @@
+first_form.form:
+  path: '/userform'
+  defaults:
+    _form: 'Drupal\first_form\Form\ExampleForm'
+    _title: 'Welcome to the User Registration Form.'
+  requirements:
+    _permission: 'access content'
+
+first_form.display_form:
+  path: '/display-form'
+  defaults:
+    _controller: '\Drupal\first_form\Controller\ExampleFormController::displayFormData'
+    _title: 'Display Form'
+  requirements:
+    _permission: 'access content'
+
+first_form.edit_form:
+  path: '/first-form/edit/{node}'
+  defaults:
+    _controller: '\Drupal\first_form\Controller\ExampleFormController::editForm'
+    _title: 'Edit Form'
+  requirements:
+    _permission: 'access content'

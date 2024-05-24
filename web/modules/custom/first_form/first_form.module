@@ -1,0 +1,42 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * @file
+ * Implements hook_help().
+ */
+
+/**
+ * Implements hook_help().
+ */
+function first_form_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main help for the module.
+    case 'help.page.first_form':
+      $output = '';
+      // Generate the help text.
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module provides functionality for managing custom forms and displaying data in a table.') . '</p>';
+      return $output;
+
+    default:
+      // No help available.
+      return '';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function your_module_theme($existing, $type, $theme, $path) {
+  return [
+    'first_form' => [
+      'variables' => [
+        'header' => [],
+        'rows' => [],
+      ],
+      'template' => 'first-form',
+    ],
+  ];
+}

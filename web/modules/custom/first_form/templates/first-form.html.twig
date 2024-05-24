@@ -1,0 +1,33 @@
+{# first_form.html.twig #}
+{#
+/**
+ * @file
+ * Twig template for rendering the custom content type table.
+ *
+ * Available variables:
+ * - header: An array of table headers.
+ * - rows: An array of table rows, each containing data for the corresponding header.
+ */
+#}
+<table>
+  <thead>
+    <tr>
+      <th>{{ 'Title'|t }}</th>
+      <th>{{ 'Name'|t }}</th>
+      <th>{{ 'Age'|t }}</th>
+      <th>{{ 'Email'|t }}</th>
+      <th>{{ 'Qualification'|t }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+      <tr>
+        <td>{{ row.title }}</td>
+        <td>{{ row.name }}</td>
+        <td>{{ row.age }}</td>
+        <td>{{ row.email }}</td>
+        <td>{{ row.qualification }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table> 
